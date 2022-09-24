@@ -30,7 +30,7 @@ class BertConfig(BaseConfig):
         self.eval_batch_size = 128
         self.epochs = 5
         self.seed = 42
-        self.model_path = "./data/chinese-bert-wwm-ext"
+        self.model_path = "/Users/baojiang/Downloads/code/chinese-bert-wwm-ext"
         self.output_model_path = "./data/model_result/bert.pth"
 
     @staticmethod
