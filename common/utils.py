@@ -16,6 +16,11 @@ def load_pkl(path):
         return pickle.load(f)
 
 
+def to_pkl(data, path):
+    with open(path, "wb") as f:
+        pickle.dump(data, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)

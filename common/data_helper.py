@@ -43,7 +43,7 @@ class CnnDataSet(Dataset):
         return input_ids, labels
 
     def __len__(self):
-        return len(self.features)
+        return len(self.features[0])
 
     def __getitem__(self, index):
         return [self.features[i][index] for i in range(len(self.features))]

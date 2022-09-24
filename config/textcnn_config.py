@@ -51,7 +51,7 @@ class TextCNNConfig(BaseConfig):
         return label2idx
 
     @staticmethod
-    def load_word2idx(self, path):
+    def load_word2idx(path):
         if path.split(".")[-1] == "txt":
             words = []
             with open(path, "r", encoding="utf-8") as f:
@@ -68,3 +68,14 @@ class TextCNNConfig(BaseConfig):
         embedding = load_pkl(path)
         return torch.tensor(embedding, dtype=torch.float32)
 
+
+if __name__ == "__main__":
+    a = TextCNNConfig()
+    print(a.embedding_pretrained.shape)
+
+    word = "我"
+    word_id = a.word2idx[word]
+    print(word_id)
+
+    word_emb = a.embedding_pretrained[word_id]
+    print(word_emb)
